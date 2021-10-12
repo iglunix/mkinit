@@ -1,7 +1,9 @@
-#!/bin/make -j4 -f
+#!/bin/sh
+_=0 mkdir -p /tmp/init.d && make -j4 -f $0 $@ && exit
 
 /tmp/init.d/mnt:
 	/etc/init.d/mnt
+	mkdir -p /tmp/init.d
 	touch /tmp/init.d/mnt
 
 /tmp/init.d/mod: /tmp/init.d/mnt
